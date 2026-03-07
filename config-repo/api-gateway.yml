@@ -9,12 +9,12 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
       routes:
         - id: crop-inventory-service
           uri: lb://CROP-INVENTORY-SERVICE
           predicates:
-            - Path=/api/crops/**
+            - name: Path
+              args:
+                patterns:
+                  - /api/crops
+                  - /api/crops/**
