@@ -17,6 +17,7 @@
     <modules>
         <module>discovery-server</module>
         <module>config-server</module>
+        <module>crop-inventory-service</module>
     </modules>
 
 </project>
