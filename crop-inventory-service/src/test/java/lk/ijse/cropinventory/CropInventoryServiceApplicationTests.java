@@ -1,4 +1,4 @@
-package lk.ijse.cropinventoryservice;
+package lk.ijse.cropinventory;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
