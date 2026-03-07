@@ -9,4 +9,6 @@ eureka:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/crop_inventory_db
+      host: localhost
+      port: 27017
+      database: crop_inventory_db
