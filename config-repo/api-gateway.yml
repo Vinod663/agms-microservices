@@ -18,3 +18,12 @@ spring:
                 patterns:
                   - /api/crops
                   - /api/crops/**
+
+        - id: zone-management-service
+          uri: lb://ZONE-MANAGEMENT-SERVICE
+          predicates:
+            - name: Path
+              args:
+                patterns:
+                  - /api/zones
+                  - /api/zones/**

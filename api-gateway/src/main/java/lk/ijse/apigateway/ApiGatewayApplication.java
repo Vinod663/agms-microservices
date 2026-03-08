@@ -21,6 +21,9 @@ public class ApiGatewayApplication {
                 .route("crop-inventory-service", r -> r
                         .path("/api/crops", "/api/crops/**")
                         .uri("lb://CROP-INVENTORY-SERVICE"))
+                .route("zone-management-service", r -> r
+                        .path("/api/zones", "/api/zones/**")
+                        .uri("lb://ZONE-MANAGEMENT-SERVICE"))
                 .build();
     }
 }
