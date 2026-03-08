@@ -8,6 +8,6 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return "crop_inventory_db"; // THIS FORCES THE CORRECT DATABASE NAME!
+        return "crop_inventory_db";
     }
 }
