@@ -51,4 +51,28 @@ public class ZoneService {
         savedZone.setExternalDeviceId(response.getDeviceId());
         return zoneRepository.save(savedZone);
     }
+
+    public Zone getZoneById(String id) {
+        return zoneRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Zone with ID " + id + " not found."));
+    }
+
+    @Transactional
+    public Zone updateZoneThresholds(String id, Zone updatedData) {
+        Zone existingZone = zoneRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Zone with ID " + id + " not found."));
+
+        existingZone.setMinTemp(updatedData.getMinTemp());
+        existingZone.setMaxTemp(updatedData.getMaxTemp());
+
+        return zoneRepository.save(existingZone);
+    }
+
+    @Transactional
+    public void deleteZone(String id) {
+        if (!zoneRepository.existsById(id)) {
+            throw new IllegalArgumentException("Zone with ID " + id + " not found.");
+        }
+        zoneRepository.deleteById(id);
+    }
 }
