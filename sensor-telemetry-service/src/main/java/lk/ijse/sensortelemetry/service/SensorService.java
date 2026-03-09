@@ -43,7 +43,7 @@ public class SensorService {
                 TelemetryResponse telemetry = ioTClient.getTelemetry(bearerToken, device.getDeviceId());
                 this.latestReading = telemetry;
 
-                System.out.println("📡 Sensor fetched data for Zone: " + device.getZoneId() +
+                System.out.println("Sensor fetched data for Zone: " + device.getZoneId() +
                         " | Temp: " + telemetry.getValue().getTemperature() + "°C");
 
                 SensorData dataToPush = new SensorData(

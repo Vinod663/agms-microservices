@@ -43,12 +43,12 @@ public class AutomationService {
             actionLogRepository.save(log);
 
             //Print the result
-            System.out.println("⚡ Automation triggered for Zone " + sensorData.getZoneId() +
+            System.out.println("Automation triggered for Zone " + sensorData.getZoneId() +
                     " | Temp: " + sensorData.getTemperature() + "°C" +
                     " | Action: " + action);
 
         } catch (Exception e) {
-            System.err.println("❌ Failed to process automation for zone " + sensorData.getZoneId() + ": " + e.getMessage());
+            System.err.println("Failed to process automation for zone " + sensorData.getZoneId() + ": " + e.getMessage());
         }
     }
 }
