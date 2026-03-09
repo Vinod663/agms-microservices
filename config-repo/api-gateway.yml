@@ -10,7 +10,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: crop-inventory-service-
+        - id: crop-inventory-service
           uri: lb://CROP-INVENTORY-SERVICE
           predicates:
             - name: Path
@@ -31,20 +31,20 @@ spring:
         - id: sensor-telemetry-service
           uri: lb://SENSOR-TELEMETRY-SERVICE
           predicates:
-              - name: Path
-                args:
-                  patterns:
-                    - /api/sensors
-                    - /api/sensors/**
+            - name: Path
+              args:
+                patterns:
+                  - /api/sensors
+                  - /api/sensors/**
 
         - id: automation-control-service
           uri: lb://AUTOMATION-CONTROL-SERVICE
           predicates:
-              - name: Path
-                args:
-                  patterns:
-                    - /api/automation
-                    - /api/automation/**
+            - name: Path
+              args:
+                patterns:
+                  - /api/automation
+                  - /api/automation/**
 
-          jwt:
-            secret: "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437"
+jwt:
+  secret: "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437"
