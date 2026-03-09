@@ -41,7 +41,7 @@ public class AutomationService {
             );
             actionLogRepository.save(log);
 
-            System.out.println("⚡ Automation triggered for Zone " + sensorData.getZoneId() +
+            System.out.println("Automation triggered for Zone " + sensorData.getZoneId() +
                     " | Temp: " + sensorData.getTemperature() + "°C" +
                     " | Action: " + action);
 
