@@ -36,3 +36,12 @@ spring:
                   patterns:
                     - /api/sensors
                     - /api/sensors/**
+
+        - id: automation-control-service
+          uri: lb://AUTOMATION-CONTROL-SERVICE
+          predicates:
+              - name: Path
+                args:
+                  patterns:
+                    - /api/automation
+                    - /api/automation/**
