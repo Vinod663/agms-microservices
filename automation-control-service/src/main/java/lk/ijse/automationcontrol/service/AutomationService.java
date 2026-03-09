@@ -8,6 +8,8 @@ import lk.ijse.automationcontrol.repository.ActionLogRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class AutomationService {
 
@@ -22,18 +24,15 @@ public class AutomationService {
     @Transactional
     public void processSensorData(SensorData sensorData) {
         try {
-            //Ask the Zone Service for the threshold rules
             ZoneDTO zone = zoneClient.getZoneById(sensorData.getZoneId());
 
-            //Evaluate the temperature
             String action = "NORMAL";
             if (sensorData.getTemperature() > zone.getMaxTemp()) {
-                action = "COOLER_ON";
+                action = "TURN_FAN_ON";
             } else if (sensorData.getTemperature() < zone.getMinTemp()) {
-                action = "HEATER_ON";
+                action = "TURN_HEATER_ON";
             }
 
-            //Log the action to the database
             ActionLog log = new ActionLog(
                     sensorData.getZoneId(),
                     sensorData.getDeviceId(),
@@ -42,13 +41,16 @@ public class AutomationService {
             );
             actionLogRepository.save(log);
 
-            //Print the result
-            System.out.println("Automation triggered for Zone " + sensorData.getZoneId() +
+            System.out.println("⚡ Automation triggered for Zone " + sensorData.getZoneId() +
                     " | Temp: " + sensorData.getTemperature() + "°C" +
                     " | Action: " + action);
 
         } catch (Exception e) {
             System.err.println("Failed to process automation for zone " + sensorData.getZoneId() + ": " + e.getMessage());
         }
+    }
+
+    public List<ActionLog> getAllLogs() {
+        return actionLogRepository.findAll();
     }
 }

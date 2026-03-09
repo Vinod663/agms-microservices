@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "automation-control-service")
 public interface AutomationClient {
 
-    @PostMapping("/api/automation")
+    @PostMapping("/api/automation/process")
     void sendSensorData(@RequestBody SensorData sensorData);
 }
