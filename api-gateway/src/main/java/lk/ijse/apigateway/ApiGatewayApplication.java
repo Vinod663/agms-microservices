@@ -24,6 +24,9 @@ public class ApiGatewayApplication {
                 .route("zone-management-service", r -> r
                         .path("/api/zones", "/api/zones/**")
                         .uri("lb://ZONE-MANAGEMENT-SERVICE"))
+                .route("sensor-telemetry-service", r -> r
+                        .path("/api/sensors", "/api/sensors/**")
+                        .uri("lb://SENSOR-TELEMETRY-SERVICE"))
                 .build();
     }
 }

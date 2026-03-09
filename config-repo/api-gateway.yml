@@ -27,3 +27,12 @@ spring:
                 patterns:
                   - /api/zones
                   - /api/zones/**
+
+        - id: sensor-telemetry-service
+          uri: lb://SENSOR-TELEMETRY-SERVICE
+          predicates:
+              - name: Path
+                args:
+                  patterns:
+                    - /api/sensors
+                    - /api/sensors/**
