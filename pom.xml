@@ -21,6 +21,7 @@
         <module>api-gateway</module>
         <module>zone-management-service</module>
         <module>sensor-telemetry-service</module>
+        <module>automation-control-service</module>
     </modules>
 
 </project>
