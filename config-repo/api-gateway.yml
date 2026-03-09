@@ -10,7 +10,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: crop-inventory-service
+        - id: crop-inventory-service-
           uri: lb://CROP-INVENTORY-SERVICE
           predicates:
             - name: Path

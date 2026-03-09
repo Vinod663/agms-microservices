@@ -20,6 +20,7 @@
         <module>crop-inventory-service</module>
         <module>api-gateway</module>
         <module>zone-management-service</module>
+        <module>sensor-telemetry-service</module>
     </modules>
 
 </project>
