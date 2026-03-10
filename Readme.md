@@ -1,7 +1,7 @@
 # 🌿 Automated Greenhouse Management System (AGMS)
 
 ![Java](https://img.shields.io/badge/Java-17-orange.svg)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-brightgreen.svg)
 ![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-Microservices-blue.svg)
 ![MySQL](https://img.shields.io/badge/MySQL-Relational-lightgrey.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-NoSQL-green.svg)
